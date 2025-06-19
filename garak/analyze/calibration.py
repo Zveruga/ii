@@ -130,9 +130,7 @@ class Calibration:
             self.calibration_filename = self._build_path("calibration.json")
 
         else:
-            if not isinstance(calibration_path, str) or isinstance(
-                calibration_path, pathlib.Path
-            ):
+            if not isinstance(calibration_path, (str, pathlib.Path)):
                 raise ValueError("calibration_path must be a string or Path")
             self.calibration_filename = calibration_path
 
